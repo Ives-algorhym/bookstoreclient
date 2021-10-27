@@ -7,7 +7,7 @@ const App = () =>{
 
     
 
-    axios(`${baseUrl}/api/v1/books`).then(books =>{
+    axios.get(`${baseUrl}/api/v1/books`).then(books =>{
         console.log(books);
     })
     
