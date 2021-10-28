@@ -7,4 +7,4 @@ script:
 deploy:
       provider: heroku
       api_key: $HEROKU_TOKEN
-      app: "algo-book-client"
+      app: algo-book-client
