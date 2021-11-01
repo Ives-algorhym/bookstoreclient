@@ -1,10 +1,9 @@
 import React from "react";
 import Bookfilter from "./Bookfilter";
 import { Box } from "@material-ui/core";
-import {useDispatch} from 'react-redux';
+import { useDispatch } from 'react-redux';
 import getBooksAction from "../../module/Book/bookAction";
-import { getBookSelector } from "../../module/Book/bookSelector";
-import store from "/home/algo-rhym/Documents/bookstoreclient/src/index.jsx"
+/*import { getBookSelector } from "../../module/Book/bookSelector";*/
 import styles from "./BookStyls";
 
 
