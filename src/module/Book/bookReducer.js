@@ -1,13 +1,13 @@
 const INITIAL_BOOK_REDUCER_STATE = {
-    books: []
+    books: [],
 }
 
 const bookReducer = (state = INITIAL_BOOK_REDUCER_STATE, action) => {
-    switch(action.statetype){
+    switch(action.type){
         case 'BOOKLIST' :{
             return{
               ...state,
-              books: action.payload
+              books: action.payload,
             }
         }
 
