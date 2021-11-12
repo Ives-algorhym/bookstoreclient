@@ -1,16 +1,34 @@
-import getBookService from "./bookService";
+import { getBooksService } from "./bookService";
 
 
-const getBooksAction = () => async (dispatch) => {
-    try{
-        const books = await getBookService();
-        dispatch({
-            type: 'BOOKLIST',
-            payload: books.data
-        })
-    } catch(error){
-        console.log(error);
-    }
-}
 
-export default getBooksAction;
+export const getBooksAction = () => async (dispatch) => {
+  try {
+    // Loading Data
+    dispatch({
+      type: "BOOKLISTPENDING",
+    });
+
+    // Calling service
+    const books = await getBooksService();
+
+    // When getting data
+    dispatch({
+      type: "BOOKLIST",
+      payload: books.data,
+    });
+
+    // When finishing to load all data
+    dispatch({
+      type: "BOOKLISTFULFILLED",
+    });
+  } catch (error) {
+    console.log(error);
+
+    // Data connection issue
+    dispatch({
+      type: "BOOKLISTERROR",
+    });
+  }
+};
+
